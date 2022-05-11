@@ -12,6 +12,10 @@ h1, h3, h5{
   font-weight: bolder;
 }
 
+ul{
+  padding: 0;
+}
+
 .wrapper{
   height: 100vh;
 }
@@ -24,6 +28,13 @@ h1, h3, h5{
   text-align: center;
 }
 
-.content{
-  width: 100%;
+.custom-box .loading-gif{
+  display: flex;
+  height: 261px;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-box .loading-gif img{
+  height: 60%;
 }
