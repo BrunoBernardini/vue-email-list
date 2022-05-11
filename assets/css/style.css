@@ -3,3 +3,27 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body{
+  background-color: cadetblue;
+}
+
+h1, h3, h5{
+  font-weight: bolder;
+}
+
+.wrapper{
+  height: 100vh;
+}
+
+.custom-box{
+  background-color: aliceblue;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  min-height: 55%;
+  text-align: center;
+}
+
+.content{
+  width: 100%;
+}
