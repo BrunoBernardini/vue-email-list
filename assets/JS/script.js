@@ -18,18 +18,14 @@ const app = new Vue({
     generateEmailList(quantity){
       // La variabile "generated" viene comunque inizializzata a false nel caso in cui la funzione venisse richiamata altre volte tramite il pulsante.
       this.generated = false;
-      let self = this;
-      // viene usato setTimeout per simulare un caricamento
-      setTimeout(function(){
-        self.emailList = [];
-        for(let i=0; i<quantity; i++){
-          axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-            .then(resp=>{
-              self.emailList.push(resp.data.response);
-              if(self.emailList.length === quantity) self.generated = true;
-            });
-        }
-      },1000);
+      this.emailList = [];
+      for(let i=0; i<quantity; i++){
+        axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
+          .then(resp=>{
+            this.emailList.push(resp.data.response);
+            if(this.emailList.length === quantity) this.generated = true;
+          });
+      }
     }
   },
   mounted(){
