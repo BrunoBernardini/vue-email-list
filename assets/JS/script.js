@@ -16,6 +16,7 @@ const app = new Vue({
   },
   methods: {
     generateEmailList(quantity){
+      // La variabile "generated" viene comunque inizializzata a false nel caso in cui la funzione venisse richiamata altre volte tramite il pulsante.
       this.generated = false;
       let self = this;
       // viene usato setTimeout per simulare un caricamento
@@ -25,9 +26,9 @@ const app = new Vue({
           axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then(resp=>{
               self.emailList.push(resp.data.response);
-            })
+              if(self.emailList.length === quantity) self.generated = true;
+            });
         }
-        self.generated = true;
       },1000);
     }
   },
